@@ -14,3 +14,5 @@
 Igor-Mikhail-Valentin Glebov (Backend)
 
 Christopher Andersen (Python/Frontend/Backend)
+
+Sean Orner(Database/Frontend)
