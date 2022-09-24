@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd client && npm start"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ualbany-software-engineering/Team7-Discord-Bot.git"
   },
-  "engines":{
+  "engines": {
     "node": "16.x"
   },
   "author": "",
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/ualbany-software-engineering/Team7-Discord-Bot/issues"
   },
-  "homepage": "https://github.com/ualbany-software-engineering/Team7-Discord-Bot#readme"
+  "homepage": "https://github.com/ualbany-software-engineering/Team7-Discord-Bot#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
