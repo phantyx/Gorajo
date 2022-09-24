@@ -1,6 +1,8 @@
 import './App.css';
 import { DataGrid } from '@mui/x-data-grid';
 import React, {useState, useEffect} from 'react';
+import { Box, Container, Typography} from '@mui/material';
+
 
 
 function App() {
@@ -24,7 +26,7 @@ function App() {
       return (a.points - b.points) * -1;
     })
 
-    var rank = 5;
+    var rank = 1;
 
     for (var r of rows){
       r.rank = rank;
@@ -49,18 +51,18 @@ function App() {
 
 
   return (
-    <div style={{ height: 600, width: '80%', display:'flex', margin: 'auto' }}>
-      <Box 
-        sx = {{}}
-      />
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        rowsPerPageOptions={[]}
-        alignItems='center'
-        display='flex'
-      />
-    </div>
+    <Box  style={{textAlign: 'center'}}>
+      <h1> Trivia Leaderboard </h1>
+      <Box style={{ height: 600, width: '80%', display:'flex', margin: 'auto' }}>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          rowsPerPageOptions={[]}
+          alignItems='center'
+          display='flex'
+        />
+      </Box>
+    </Box>
   );
 }
 
