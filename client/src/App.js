@@ -33,7 +33,7 @@ function App() {
       rank++;
     }
 
-    setRows(rows)
+    setRows(unsorted)
   }, [])
 
   
