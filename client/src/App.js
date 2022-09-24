@@ -10,7 +10,7 @@ function App() {
   const [rows, setRows] = useState([])
 
   useEffect(() => {
-    var rows = [
+    var unsorted = [
       { id: 1, name: 'Snow', points: 35, category: 'Lorem Ipsum' },
       { id: 2, name: 'Lannister', points: 42, category: 'Lorem Ipsum' },
       { id: 3, name: 'Lannister', points: 45, category: 'Lorem Ipsum' },
@@ -22,19 +22,19 @@ function App() {
       { id: 9, name: 'Roxie', points: 65, category: 'Lorem Ipsum' },
     ];
 
-    rows.sort((a,b) => {
+    unsorted.sort((a,b) => {
       return (a.points - b.points) * -1;
     })
 
     var rank = 1;
 
-    for (var r of rows){
+    for (var r of unsorted){
       r.rank = rank;
       rank++;
     }
 
-    setRows(rows)
-  })
+    setRows(unsorted)
+  }, [])
 
   
 
