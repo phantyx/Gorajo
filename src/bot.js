@@ -21,9 +21,9 @@ const client = new Client({ intents: GatewayIntentBits.Guilds });
 client.commands = new Collection();
 client.commandArray = [];
 
-const functionFolders = fs.readdirSync(`./src/functions`);
+const functionFolders = fs.readdirSync(`./functions`);
 for (const folder of functionFolders) {
-    const functionFiles = fs.readdirSync(`./src/functions/${folder}`).filter((file) => file.endsWith(".js"));
+    const functionFiles = fs.readdirSync(`./functions/${folder}`).filter((file) => file.endsWith(".js"));
     for (const file of functionFiles) {
         require(`./functions/${folder}/${file}`)(client);
     }
