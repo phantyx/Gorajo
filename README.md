@@ -13,10 +13,14 @@
 # Team Members:
 Igor-Mikhail-Valentin Glebov (Backend)
 
-Christopher Andersen (Python/Frontend/Backend)
+Justin Deng (Frontend/Backend)
+
+Christopher Andersen (Frontend/Backend)
 
 Sean Orner(Database/Frontend)
 
+Kellen Bavis (Database/Backend)
 
 #Frontend link
 https://team7-frontend.herokuapp.com/
+
