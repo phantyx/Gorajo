@@ -12,7 +12,5 @@ module.exports = {
         await interaction.reply('Here is your question...');
         let destination = interaction.channel;
         let result = trivia.start(destination, interaction);
-
-        await interaction.followUp(result);
     }
 }

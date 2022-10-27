@@ -6,30 +6,9 @@ const words = fs.readFileSync("./1000words.txt", "utf8").split("\n");
 const questionA = "The term \"battery\" to describe an electrical storage device was coined by?";
 const answerA = "Benjamin Franklin";
 
-class Scramble {
+class Trivia {
   async start(destination, interaction) {
     this.questionInstance(destination, interaction, questionA, answerA);
-  }
-
-  async generateQuestionEmbed(question, count) {
-    const embed = new EmbedBuilder().addFields({
-      name: `Trivia Question #${count}`,
-      value: `${question}`,
-      inline: true,
-    })
-    return embed;
-  }
-
-  async generateTrueEmbed(bool) {
-    let response = "Incorrect! Try Again!";
-    if (bool === true) {
-      response = "Correct!";
-    }
-    const embed = new EmbedBuilder().addFields({
-      name: `${response}`,
-      inline: true
-    })
-    return embed;
   }
 
   async questionInstance(destination, interaction, question, answer) {
@@ -58,7 +37,7 @@ class Scramble {
         score.push(attempts);
         author = m.author.username;
 
-        destination.send({ embeds: [generateTrueEmbed(true)] });
+        destination.send({ embeds: [generateTrueEmbed(true, count)] });
         count++;
         // Get new random word, scramble word, and send to user
           //Add randomizer code
@@ -67,7 +46,7 @@ class Scramble {
         // User enters in the incorrect answer to the question
       } else {
         attempts++;
-        destination.send({ embeds: [generateTrueEmbed(false)] });
+        destination.send({ embeds: [generateTrueEmbed(false, count)] });
       }
     });
 
@@ -76,6 +55,25 @@ class Scramble {
       destination.send(`Time is up! You answered ${numCorrect} correctly!`);
     });
   }
+}
+
+function generateQuestionEmbed(question, count) {
+  const embed = {
+  title: 'Trivia Question #' + count,
+  description: question,
+  };
+  return embed;
+}
+
+function generateTrueEmbed(bool, count) {
+  let response = "Incorrect! Try Again!";
+  if (bool === true) {
+    response = "Correct!";
+  }
+  const embed = new EmbedBuilder()
+  .setTitle('Trivia Question #' + count)
+  .setDescription(response);
+  return embed;
 }
 
 module.exports = Trivia;
