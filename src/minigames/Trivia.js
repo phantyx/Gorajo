@@ -8,7 +8,7 @@ const answerA = "Benjamin Franklin";
 
 class Scramble {
   async start(destination, interaction) {
-    this.play(destination, interaction);
+    this.questionInstance(destination, interaction, questionA, answerA);
   }
 
   async generateQuestionEmbed(question, count) {
@@ -37,6 +37,7 @@ class Scramble {
     let attempts = 0;
     let questions = [];
     let score = [];
+    let author;
 
     destination.send({ embeds: [generateQuestionEmbed(question, count)] });
 
