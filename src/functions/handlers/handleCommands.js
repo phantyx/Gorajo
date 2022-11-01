@@ -2,6 +2,7 @@ const { Routes } = require('discord-api-types/v9');
 const { REST } = require('@discordjs/rest')
 const fs = require('fs');
 const path = require('path');
+const config = require("./../../config.json");
 
 module.exports = (client) => {
     client.handleCommands = async () => {
@@ -20,14 +21,11 @@ module.exports = (client) => {
             }
         }
 
-        const clientId = '1034915397134192731';
-        const guildId = '1014210806864416788';
-
-        const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
+        const rest = new REST({ version: '9' }).setToken(config.token);
         try {
             console.log('Refreshing (/) commands...');
 
-            await rest.put(Routes.applicationGuildCommands(clientId, guildId), {
+            await rest.put(Routes.applicationGuildCommands(config.applicationid, config.guildid), {
                 body: client.commandArray
             });
             console.log('Registered the (/) commands.');

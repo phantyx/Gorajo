@@ -11,7 +11,7 @@ module.exports = (client) => {
             switch (folder) {
                 case "client":
                     for (const file of eventFiles) {
-                        console.log(path.resolve(__dirname, '..', '..', 'events', folder, file));
+                        //console.log(path.resolve(__dirname, '..', '..', 'events', folder, file));
                         const event = require(path.resolve(__dirname, '..', '..', 'events', folder, file));
                         if (event.once) {
                             client.once(event.name, (...args) => event.execute(...args, client));
@@ -20,7 +20,6 @@ module.exports = (client) => {
                         }
                     }
                     break;
-
                 default:
                     break;
             }

@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const fs = require("fs");
 
-dotenv.config();
+dotenv.config(); 
 
 //console.log(process.env.DB_URI, "is database token")
 //console.log(process.env.token, "is discord token")

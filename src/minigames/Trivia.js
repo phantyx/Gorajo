@@ -1,4 +1,3 @@
-const ScrambleWords = require(`../models/ScrambleWordsLeaderboard`);
 const { EmbedBuilder } = require("discord.js");
 const fs = require("fs");
 const words = fs.readFileSync("./1000words.txt", "utf8").split("\n");

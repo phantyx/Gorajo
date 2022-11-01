@@ -1,7 +1,7 @@
 const discord = require('discord.js')
 const mongoose = require('mongoose');
 const MatchHistory = require(`../models/MatchHistory`);
-
+/**
 mongoose
     .connect(process.env.DB_URI)
     .then(console.log('Sucessfully connected to the database'))
@@ -9,7 +9,7 @@ mongoose
         console.log('error caught');
         console.log(e)
     })
-
+*/
 class DiceGame {
 
     start() {

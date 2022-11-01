@@ -1,0 +1,18 @@
+Current Version: 2.0
+
+v2.0
+The initial point of this remake was to add a few core features for
+this project. Following will track my progress in this remake.
+
+created gorajo.js, an alternative bot script to implement the following changes.
+
+created config.json
+    added vars: token, db_uri, applicationid, guildid, prefix
+        config hosts server-sided settings, but it also hosts global
+        references to private information stored in the .env file.
+        The security of this method is unknown and should be verified.
+
+handleEvents remained untouched.
+
+handleCommands now has the token, applicationid, and guildid, properly
+    referenced via the config file.
